@@ -1,10 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>The Sexton Family</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bouncing Balls Physics</title>
+    <link rel="stylesheet" href="stylesheets/Main.css">
   </head>
   <body>
-    <p>This is my page to start setting up to practice using Github.  To continue the web development journey and teach Max Carter and Miles Francis!  Onward and upward...</p>
+    <header class="toolbar">
+      <div class="toolbar__group">
+        <label for="ballCount">Balls</label>
+        <input id="ballCount" type="range" min="1" max="10" value="6">
+        <span id="ballCountValue">6</span>
+      </div>
+
+      <div class="toolbar__group">
+        <label for="speed">Speed</label>
+        <input id="speed" type="range" min="0.2" max="3" step="0.05" value="1">
+        <span id="speedValue">1.00×</span>
+      </div>
+
+      <div class="toolbar__group">
+        <label for="color">Color</label>
+        <input id="color" type="color" value="#00aaff">
+      </div>
+
+      <button id="reset">Reset</button>
+    </header>
+
+    <main class="content">
+      <canvas id="canvas" aria-label="Bouncing balls simulation"></canvas>
+    </main>
+
+    <script src="javascripts/Main.js"></script>
   </body>
 </html>

@@ -1,1 +1,85 @@
-/*Comments for Main CSS
+/* Main styles for the bouncing balls demo */
+
+:root {
+  --toolbar-height: 64px;
+  --toolbar-gap: 12px;
+  --bg: #101820;
+  --panel-bg: rgba(255, 255, 255, 0.06);
+  --panel-border: rgba(255, 255, 255, 0.16);
+  --text: #f2f2f2;
+  --accent: #00aaff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text);
+  background: radial-gradient(circle at 20% 20%, #272d3b, #0b0d13 65%);
+  overflow: hidden;
+}
+
+.toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--toolbar-height);
+  display: flex;
+  align-items: center;
+  gap: var(--toolbar-gap);
+  padding: 0 16px;
+  background: var(--panel-bg);
+  border-bottom: 1px solid var(--panel-border);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+.toolbar__group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9rem;
+}
+
+.toolbar__group label {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.toolbar input[type="range"] {
+  width: 160px;
+}
+
+.toolbar button {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.toolbar button:hover {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.content {
+  position: absolute;
+  inset: var(--toolbar-height) 0 0 0;
+  overflow: hidden;
+}
+
+#canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
